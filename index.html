@@ -3341,7 +3341,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 </tr>
 <tr>
 <td>ClientOrderId</td>
-<td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
+<td><strong>long integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
 <td>OrderState</td>
@@ -5190,7 +5190,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 </tr>
 <tr>
 <td>ClientOrderId</td>
-<td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>clientOrderId</em> defaults to 0 if not supplied.</td>
+<td><strong>long integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>clientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
 <td>InstrumentId</td>
@@ -5491,7 +5491,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 </tr>
 <tr>
 <td>ClientOrderId</td>
-<td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
+<td><strong>long integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
 <td>OrderState</td>
@@ -5677,7 +5677,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 </tr>
 <tr>
 <td>ClientOrderId</td>
-<td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
+<td><strong>long integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
 <td>OrderState</td>
@@ -5983,7 +5983,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 </tr>
 <tr>
 <td>ClientOrderId</td>
-<td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>clientOrderId</em> defaults to 0 if not supplied.</td>
+<td><strong>long integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>clientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
 <td>InstrumentId</td>
@@ -6087,7 +6087,9 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 
 <p>Cancels all open matching orders for the specified account on an Order Management System. </p>
 
-<p>A user with Trading permission can cancel orders for himselfd; a user with Operator permissions can cancel orders for any account, instrument, or user.</p>
+<p>A user with Trading permission can cancel orders for himself; a user with Operator permissions can cancel orders for any account, instrument, or user.</p>
+
+<aside class="warning"><strong>Warning:</strong> <strong>CancelAllOrders</strong> will cancel all existing orders on an OMS when sending AccountID = 0 or when AccountID is ommited.</aside>
 
 <aside class="notice"><strong>Note:</strong> Multiple users may have access to the same account.</aside>
 <h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -6667,7 +6669,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 </tr>
 <tr>
 <td>ClientOrderId</td>
-<td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
+<td><strong>long integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
 <td>OrderState</td>
@@ -6875,7 +6877,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 <td><strong>integer.</strong> A number describing the type of order (or in this case, quote). One of:<br /><strong>0</strong> Unknown<br /><strong>1</strong> Market<br /><strong>2</strong> Limit<br /><strong>3</strong> StopMarket<br /><strong>4</strong> StopLimit<br /><strong>5</strong> TrailingStopMarket<br /><strong>6</strong> TrailingStopLimit<br /><strong>7</strong> BlockTrade</td>
 </tr>
 <tr>
-<td>cientOrderId</td>
+<td>ClientOrderId</td>
 <td><strong>long integer.</strong> A user-assigned ID for the quote (like a purchase-order number assigned by a company). <em>ClientOrderId</em> defaults to 0.</td>
 </tr>
 <tr>
@@ -7069,7 +7071,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 </tr>
 <tr>
 <td>ClientOrderId</td>
-<td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
+<td><strong>long integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
 <td>OrderState</td>
@@ -7257,7 +7259,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 </tr>
 <tr>
 <td>ClientOrderId</td>
-<td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
+<td><strong>long integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
 <td>OrderState</td>
@@ -7389,7 +7391,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 <td><strong>Integer</strong>. The account ID that made the trades. A user with Trading permission must be associated with this account, although other users also can be associated with the account. If no account ID is supplied, the system assumes the default account for the logged-in user.</td>
 </tr>
 <tr>
-<td>clientOrderId</td>
+<td>ClientOrderId</td>
 <td><strong>long integer</strong>. A user-assigned ID for the order (like a purchase-order number assigned by a company). <em>clientOrderId</em> defaults to 0.</td>
 </tr>
 <tr>
@@ -7498,7 +7500,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 </tr>
 <tr>
 <td>ClientOrderId</td>
-<td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
+<td><strong>long integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
 <td>OrderState</td>
@@ -7691,7 +7693,7 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 </tr>
 <tr>
 <td>ClientOrderId</td>
-<td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
+<td><strong>long integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>ClientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
 <td>OrderState</td>
@@ -8030,8 +8032,8 @@ Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever 
 <td><strong>string.</strong> The badge of the other party in the off-market trade.</td>
 </tr>
 <tr>
-<td>clientOrderId</td>
-<td><strong>integer.</strong> If the Gateway Setting &quot;OtcRequireCounterParty&quot; is false, the caller can exclude <em>counterPartyId</em> and include <em>clientOrderId</em> to hit a working block trade order.</td>
+<td>ClientOrderId</td>
+<td><strong>long integer.</strong> If the Gateway Setting &quot;OtcRequireCounterParty&quot; is false, the caller can exclude <em>counterPartyId</em> and include <em>clientOrderId</em> to hit a working block trade order.</td>
 </tr>
 <tr>
 <td>quantity</td>
