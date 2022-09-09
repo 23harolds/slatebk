@@ -38,7 +38,7 @@ All values other than *OMSId* are optional. If account ID is not supplied, the E
 | --------------------- | ------------------------------------------------------------ |
 | omsId                 | **Integer**. The ID of the Order Management System on which the orders took place. *Required*. If no other values are specified, the call returns the orders associated with the default account for the logged-in user on this Order Management System. |
 | accountId             | **Integer**. The account ID that made the trades. A user with Trading permission must be associated with this account, although other users also can be associated with the account. If no account ID is supplied, the system assumes the default account for the logged-in user. |
-| clientOrderId         | **long integer**. A user-assigned ID for the order (like a purchase-order number assigned by a company). *clientOrderId* defaults to 0. |
+| ClientOrderId         | **long integer**. A user-assigned ID for the order (like a purchase-order number assigned by a company). *clientOrderId* defaults to 0. |
 | originalOrderId       | **long integer**. The original ID of the order. If specified, the call returns changed orders associated with this order ID. |
 | originalClientOrderId | **long integer**. If the order has been changed, shows the original client order ID, a value that the client can create (much like a purchase order). |
 | userId                | **integer**. The ID of the user whose account orders will be returned. If not specified, the call returns the orders of the logged-in user. |
@@ -98,7 +98,7 @@ The call **GetOrdersHistory** returns an array containing all four types of orde
 | DisplayQuantity                   | **real.** The quantity available to buy or sell that is publicly displayed to the market. To display a *displayQuantity* value, an order must be a Limit order with a reserve. |
 | Instrument                        | **integer.** ID of the instrument being traded. The call  **GetInstruments** can supply the instrument IDs that are available. |
 | orderType                         | **string.** Describes the type of order this is. One of:<br />**0** Unknown (an error condition)<br />**1** Market order<br />**2** Limit<br />**3** StopMarket<br />**4** StopLimit<br />**5** TrailingStopMarket<br />**6** TrailingStopLimit<br />**7** BlockTrade |
-| ClientOrderId                     | **integer.** An ID supplied by the client to identify the order (like a purchase order number). The *ClientOrderId* defaults to 0 if not supplied.                       |
+| ClientOrderId                     | **long integer.** An ID supplied by the client to identify the order (like a purchase order number). The *ClientOrderId* defaults to 0 if not supplied.                       |
 | OrderState                        | **string.** The current state of the order. One of:<br />**0** Unknown<br />**1** Working<br />**2** Rejected<br />**3** Canceled<br />**4** Expired<br />**5** Fully Executed.                           |
 | ReceiveTime                       | **long integer.** Time stamp of the order in POSIX format x 1000 (milliseconds since 1/1/1970 in UTC time zone).   |
 | ReceiveTimeTicks                  | **long integer.** Time stamp of the order Microsoft Ticks format and UTC time zone. **Note:** Microsoft Ticks format is usually provided as a string. Here it is provided as a long integer.   |

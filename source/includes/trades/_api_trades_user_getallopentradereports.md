@@ -70,7 +70,7 @@ The call **GetAllOpenTradeReports** returns an array containing block trades for
 | DisplayQuantity                   | **real.** The quantity available to buy or sell that is publicly displayed to the market. To display a *displayQuantity* value, an order must be a Limit order with a reserve. |
 | Instrument                        | **integer.** ID of the instrument being traded. The call  **GetInstruments** can supply the instrument IDs that are available. |
 | orderType                         | **string.** Describes the type of order this is. One of:<br />**0** Unknown (an error condition)<br />**1** Market order<br />**2** Limit<br />**3** StopMarket<br />**4** StopLimit<br />**5** TrailingStopMarket<br />**6** TrailingStopLimit<br />**7** BlockTrade |
-| ClientOrderId                     | **integer.** An ID supplied by the client to identify the order (like a purchase order number). The *ClientOrderId* defaults to 0 if not supplied.                       |
+| ClientOrderId                     | **long integer.** An ID supplied by the client to identify the order (like a purchase order number). The *ClientOrderId* defaults to 0 if not supplied.                       |
 | OrderState                        | **string.** The current state of the order. One of:<br />**0** Unknown<br />**1** Working<br />**2** Rejected<br />**3** Canceled<br />**4** Expired<br />**5** Fully Executed.                           |
 | ReceiveTime                       | **long integer.** Time stamp of the order in POSIX format.   |
 | ReceiveTimeTicks                  | **long integer.** Time stamp of the order in POSIX format.   |

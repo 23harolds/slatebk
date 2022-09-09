@@ -22,7 +22,7 @@ Retrieves pending Four Eye Requests.
 | Key         | Value                                                        |
 | ----------- | ------------------------------------------------------------ |
 | RequestId      	  | **integer.** A number assigned to identify this request. |
-| RequesterUserID     | **integer.** The user ID of the user requesting the endpoint of the pending four eye requests . |
+| RequesterUserID     | **integer.** The user ID of the user requesting the endpoint of the pending four eye requests. |
 | EndpointName    	  | **integer.** The endpoint the user tried to call. |
 | EndpointType     	  | **integer.** Endpoint type for the pending four eye request. Numbers correspond to the following endpoint types: <br />Parallel: 1 <br /> SystemSequential: 2 <br /> UserSequential: 3 <br />|
 | RequestStartTime    | **integer.** Returned pending four eye requests start from this epoch time.  |
@@ -49,7 +49,7 @@ The Response is an array of pending Four Eyes Requests.
 | Key       | Value                                                        |
 | --------- | ------------------------------------------------------------ |
 | RequestId      	  | **integer.** A number assigned to identify this request. |
-| RequesterUserID     | **integer.** The user ID of the user requesting the endpoint of the pending four eye requests . |
+| RequesterUserID     | **integer.** The user ID of the user requesting the endpoint of the pending four eye requests. |
 | Payload    	  | **string.** GetPendingFourEyeRequests request payload  |
 | EndpointType | **integer.** Endpoint type for the pending four eye request. Numbers correspond to the following endpoint types: <br />Parallel: 1 <br /> SystemSequential: 2 <br /> UserSequential: 3 <br /> |
 | RequestTime    | **long integer.** Epoch time of call for GetPendingFourEyeRequests  |

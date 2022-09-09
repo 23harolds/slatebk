@@ -8,7 +8,7 @@ Cancels all open matching orders for the specified account on an Order Managemen
 
 A user with Trading permission can cancel orders for himself; a user with Operator permissions can cancel orders for any account, instrument, or user.
 
-<aside class="warning"><strong>Warning:</strong> <strong>CancelAllOrders</strong> will cancel all existing orders on an OMS when sending AccountID = 0 or when AccountID is ommited .</aside>
+<aside class="warning"><strong>Warning:</strong> <strong>CancelAllOrders</strong> will cancel all existing orders on an OMS when sending AccountID = 0 or when AccountID is ommited.</aside>
 
 <aside class="notice"><strong>Note:</strong> Multiple users may have access to the same account.</aside>
 

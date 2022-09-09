@@ -73,6 +73,6 @@ Bid and Ask objects differ only in the values for the keys.
 | instrument      | **integer.** The ID of the instrument being quoted.          |
 | account         | **integer.** The ID of the account quoting the instrument.   |
 | orderType       | **integer.** A number describing the type of order (or in this case, quote). One of:<br />**0** Unknown<br />**1** Market<br />**2** Limit<br />**3** StopMarket<br />**4** StopLimit<br />**5** TrailingStopMarket<br />**6** TrailingStopLimit<br />**7** BlockTrade |
-| cientOrderId  | **long integer.** A user-assigned ID for the quote (like a purchase-order number assigned by a company). *ClientOrderId* defaults to 0. |
+| ClientOrderId  | **long integer.** A user-assigned ID for the quote (like a purchase-order number assigned by a company). *ClientOrderId* defaults to 0. |
 | orderState      | **integer.**  A number describing the current state of the order. One of:<br />**0** Unknown<br />**1** Working<br />**2** Rejected<br />**3** Canceled<br />**4** Expired<br />**5** FullyExecuted<br /><br />An open quote will probably have an *OrderState* of Working. |
 

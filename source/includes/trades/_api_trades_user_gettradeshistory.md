@@ -100,7 +100,7 @@ The response is an array of objects, each element of which represents the accoun
 | AccountId         | **integer.** The ID of the account that made the trade (buy or sell). |
 | AccountName         | **string.** The Name of the account that made the trade (buy or sell). |
 | SubAccountId      | **integer.** Not currently used; reserved for future use. Defaults to 0. |
-| ClientOrderId     | **integer.** An ID supplied by the client to identify the order (like a purchase order number). The *clientOrderId* defaults to 0 if not supplied. |
+| ClientOrderId     | **long integer.** An ID supplied by the client to identify the order (like a purchase order number). The *clientOrderId* defaults to 0 if not supplied. |
 | InstrumentId      | **integer.** The ID of the instrument being traded. An instrument comprises two products, for example Dollars and BitCoin. |
 | Side              | **string.** One of the following potential sides of a trade: <br />**0** Buy<br />**1** Sell<br />**2** Short<br />**3** Unknown (an error condition) |
 | OrderType              | **string.** One of the following potential sides of a trade: <br />Market<br />Limit<br />BlockTrade<br />StopMarket<br />StopLimit<br />TrailingStopLimit<br />StopMarket<br />TrailingStopMarket|
