@@ -1,9 +1,9 @@
 ---
-
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - json
+  - http
 
 toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
@@ -110,7 +110,6 @@ includes: # api - group - category - call
   - uncertain/api_uncertain_divider
   - uncertain/api_uncert_user_ping
 
-  
   # - apad-markdown-documentation/api_apad_divider
   # - apad-markdown-documentation/api_apad_background
   # - apad-markdown-documentation/api_apad_clawbackshares
@@ -134,10 +133,7 @@ includes: # api - group - category - call
   # - apad-markdown-documentation/api_apad_updateuser
   # - apad-markdown-documentation/api_apad_version
   # - digitizer/api_digitizer_doc
- 
 
-
- 
 search: true
 ---
 
@@ -147,8 +143,8 @@ This API covers the User-category calls in **version 3.3** of the AlphaPoint Exc
 
 The calls have been organized roughly to correspond to similar functions you would find in the AlphaPoint Admin. For example, in the Admin you manage users in the Users function. So calls that manage users have been gathered in the Users section of the API.
 
-
 ## 3.4.1 New Endpoints
+
 **RegisterNewDevice**
 
 **GetUserDevices**
@@ -164,11 +160,12 @@ The calls have been organized roughly to correspond to similar functions you wou
 Request Payload changed for Market Buy Value - if Buy order and Value (decimal) parameter is supplied, the Market order will execute up to the value specified.
 
 **GetExchangeServiceIds**
->Old GetExchangeServiceIDs Response
-An array of strings representing service ids.
 
->New GetExchangeServiceIds Response
-Array hard coded with a single entry: "Matching Engine"
+> Old GetExchangeServiceIDs Response
+> An array of strings representing service ids.
+
+> New GetExchangeServiceIds Response
+> Array hard coded with a single entry: "Matching Engine"
 
 ```json
 [
@@ -181,28 +178,28 @@ Array hard coded with a single entry: "Matching Engine"
 ```
 
 **GetExchanges**
->Old GetExchangeServiceIds Response
-A list of exchanges within a specified exchange service id.
 
->New GetExchangeServiceIds Response
-Retrieves exchanges from "THE" mathcing engine as there can only ever be one as of 3.4
+> Old GetExchangeServiceIds Response
+> A list of exchanges within a specified exchange service id.
+
+> New GetExchangeServiceIds Response
+> Retrieves exchanges from "THE" mathcing engine as there can only ever be one as of 3.4
 
 **Validate2FA**
 
-Behavior change, no longer has public permissions specified. 
+Behavior change, no longer has public permissions specified.
 
 **AddInstrument (DEPRECATED)**
 
-Behavior change, endpoint returns with bad request message specifying the endpoint is deprecated. 
+Behavior change, endpoint returns with bad request message specifying the endpoint is deprecated.
 
 **UpdateInstrument (DEPRECATED)**
 
-Behavior change, endpoint returns with bad request message specifying the endpoint is deprecated. 
+Behavior change, endpoint returns with bad request message specifying the endpoint is deprecated.
 
 **RemoveOperatorUser**
 
-Behavior change from “Deprecated” to “Remove Association of Operator with User" 
-
+Behavior change from “Deprecated” to “Remove Association of Operator with User"
 
 ## 3.5.0 Behavior Changes
 
@@ -212,101 +209,101 @@ Any query APIs that return these objects now have the below new fields and respo
 
 **AccountPosition**
 
-| Key                 | Value                                                        |
-| ------------------- | ------------------------------------------------------------ |
-| NotionalHoldAmount| **decimal.** Cross Product Amount on Hold from open orders |
-| NotionalRate | **decimal.** Current notional rate from base currency |
-| TotalDayDepositNotional | **decimal.** Total Calendar Day Deposit Notional |
-| TotalMonthDepositNotional | **decimal.** Total Calendar Month Deposit Notional |
-| TotalDayWithdrawNotional | **decimal.** Total Calendar Day Withdraw Notional |
-| TotalMonthWithdrawNotional | **decimal.** Total Calendar Month Withdraw Notional |
+| Key                        | Value                                                      |
+| -------------------------- | ---------------------------------------------------------- |
+| NotionalHoldAmount         | **decimal.** Cross Product Amount on Hold from open orders |
+| NotionalRate               | **decimal.** Current notional rate from base currency      |
+| TotalDayDepositNotional    | **decimal.** Total Calendar Day Deposit Notional           |
+| TotalMonthDepositNotional  | **decimal.** Total Calendar Month Deposit Notional         |
+| TotalDayWithdrawNotional   | **decimal.** Total Calendar Day Withdraw Notional          |
+| TotalMonthWithdrawNotional | **decimal.** Total Calendar Month Withdraw Notional        |
 
 **OrderTrade**
 
-| Key                 | Value                                                        |
-| ------------------- | ------------------------------------------------------------ |
-| CounterPartyClientUserId| **int.** Indicates counterparty source of trade (OMS, Remarketer, FIX) |
-| NotionalProductId | **int.** Notional product the notional value was captured in |
-| NotionalRate | **decimal.** Notional rate from base currency at time of trade |
-| NotionalValue | **decimal.** Notional value in base currency of venue at time of trade |
+| Key                      | Value                                                                  |
+| ------------------------ | ---------------------------------------------------------------------- |
+| CounterPartyClientUserId | **int.** Indicates counterparty source of trade (OMS, Remarketer, FIX) |
+| NotionalProductId        | **int.** Notional product the notional value was captured in           |
+| NotionalRate             | **decimal.** Notional rate from base currency at time of trade         |
+| NotionalValue            | **decimal.** Notional value in base currency of venue at time of trade |
 
 **AccountInstrumentStatistics**
 
-| Key                 | Value                                                        |
-| ------------------- | ------------------------------------------------------------ |
-| NotionalProductId | **int.** Notional product the notional value was captured in |
-| DailyNotionalTradeVolume | **decimal.** Total Calendar Day Trading Notional |
-| MonthlyNotionalTradeVolume | **decimal.** Total Calendar Month Trading Notional |
-| YearlyNotionalTradeVolume | **decimal.** Total Calendar Year Trading Notional |
+| Key                        | Value                                                        |
+| -------------------------- | ------------------------------------------------------------ |
+| NotionalProductId          | **int.** Notional product the notional value was captured in |
+| DailyNotionalTradeVolume   | **decimal.** Total Calendar Day Trading Notional             |
+| MonthlyNotionalTradeVolume | **decimal.** Total Calendar Month Trading Notional           |
+| YearlyNotionalTradeVolume  | **decimal.** Total Calendar Year Trading Notional            |
 
 **VerificationLevelInstruments**
 
-| Key                 | Value                                                        |
-| ------------------- | ------------------------------------------------------------ |
-| NotionalProductId | **int.** Notional product the notional value was captured in |
-| DailyNotionalLimit | **decimal.** Total Calendar Day Trading Notional |
-| MonthlyNotionalLimit | **decimal.** Total Calendar Month Trading Notional |
-| YearlyNotionalLimit | **decimal.** Total Calendar Year Trading Notional |
+| Key                  | Value                                                        |
+| -------------------- | ------------------------------------------------------------ |
+| NotionalProductId    | **int.** Notional product the notional value was captured in |
+| DailyNotionalLimit   | **decimal.** Total Calendar Day Trading Notional             |
+| MonthlyNotionalLimit | **decimal.** Total Calendar Month Trading Notional           |
+| YearlyNotionalLimit  | **decimal.** Total Calendar Year Trading Notional            |
 
 **AccountStatistics**
 
-| Key                 | Value                                                        |
-| ------------------- | ------------------------------------------------------------ |
-| TotalDayDepositNotional | **decimal.** Total Calendar Day Deposit Notional |
-| TotalMonthDepositNotional | **decimal.** Total Calendar Month Deposit Notional |
-| TotalDayWithdrawNotional | **decimal.** Total Calendar Day Withdraw Notional |
+| Key                        | Value                                               |
+| -------------------------- | --------------------------------------------------- |
+| TotalDayDepositNotional    | **decimal.** Total Calendar Day Deposit Notional    |
+| TotalMonthDepositNotional  | **decimal.** Total Calendar Month Deposit Notional  |
+| TotalDayWithdrawNotional   | **decimal.** Total Calendar Day Withdraw Notional   |
 | TotalMonthWithdrawNotional | **decimal.** Total Calendar Month Withdraw Notional |
 
 **VerificationLevelProducts**
 
-| Key                 | Value                                                        |
-| ------------------- | ------------------------------------------------------------ |
-| DailyDepositNotionalLimit | **decimal.** Total Calendar Day Deposit Notional Limit |
-| MonthlyDepositNotionalLimit | **decimal.** Total Calendar Month Deposit Notional Limit |
-| DailyWithdrawNotionalLimit | **decimal.** Total Calendar Day Withdraw Notional Limit |
+| Key                          | Value                                                     |
+| ---------------------------- | --------------------------------------------------------- |
+| DailyDepositNotionalLimit    | **decimal.** Total Calendar Day Deposit Notional Limit    |
+| MonthlyDepositNotionalLimit  | **decimal.** Total Calendar Month Deposit Notional Limit  |
+| DailyWithdrawNotionalLimit   | **decimal.** Total Calendar Day Withdraw Notional Limit   |
 | MonthlyWithdrawNotionalLimit | **decimal.** Total Calendar Month Withdraw Notional Limit |
 
 **OMSInfo**
 
-| Key                 | Value                                                        |
-| ------------------- | ------------------------------------------------------------ |
+| Key                   | Value                                                     |
+| --------------------- | --------------------------------------------------------- |
 | BaseNotionalProductId | **int.** Id of Base Product to be used in Notional Limits |
 
 **Fee**
 
-| Key                 | Value                                                        |
-| ------------------- | ------------------------------------------------------------ |
+| Key     | Value                                                                                                      |
+| ------- | ---------------------------------------------------------------------------------------------------------- |
 | FeeTier | **int.** Id of the Fee Tier the fee belongs to. Matches AccountInfo FeeGroupId (previously existing field) |
 
 **Instrument**
 
-| Key                 | Value                                                        |
-| ------------------- | ------------------------------------------------------------ |
-| PriceCollarIndexDifference | **decimal.** The percent different from the index price that an order is allowed to execute at. Anything falling outside of the index price +/- (1 + PriceCollarIndexDifference) will be collared |
-| PriceCollarConvertToOtcEnabled | **bool.** Turns on/off conversion of collared orders to block trades |
-| PriceCollarConvertToOtcClientUserId | **int.** Internal System UserId to assign the collared otc orders to. Should alwaays be 1 in current implementation (default) |
-| PriceCollarConvertToOtcAccountId | **int.** Account Id to assign the collared orders to. This will effectively be a liability account that will need to have working block trades managed by operator. |
-| PriceCollarConvertToOtcThreshold | **decimal.** Threshold of remaining size of order to convert to block trade. If collared order does not have remaining quantity above this threshold the remainder will be cancelled. |
-| OtcConvertSizeEnabled | **bool.** Turns on/off auto conversion of 'large' limit orders converted to block trade orders upon receipt by the matching engine |
-| OtcConvertSizeThreshold | **decimal.** Threshold to convert limit order quantity to block trade automatically for discovery by block trade market participants |
+| Key                                 | Value                                                                                                                                                                                             |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PriceCollarIndexDifference          | **decimal.** The percent different from the index price that an order is allowed to execute at. Anything falling outside of the index price +/- (1 + PriceCollarIndexDifference) will be collared |
+| PriceCollarConvertToOtcEnabled      | **bool.** Turns on/off conversion of collared orders to block trades                                                                                                                              |
+| PriceCollarConvertToOtcClientUserId | **int.** Internal System UserId to assign the collared otc orders to. Should alwaays be 1 in current implementation (default)                                                                     |
+| PriceCollarConvertToOtcAccountId    | **int.** Account Id to assign the collared orders to. This will effectively be a liability account that will need to have working block trades managed by operator.                               |
+| PriceCollarConvertToOtcThreshold    | **decimal.** Threshold of remaining size of order to convert to block trade. If collared order does not have remaining quantity above this threshold the remainder will be cancelled.             |
+| OtcConvertSizeEnabled               | **bool.** Turns on/off auto conversion of 'large' limit orders converted to block trade orders upon receipt by the matching engine                                                                |
+| OtcConvertSizeThreshold             | **decimal.** Threshold to convert limit order quantity to block trade automatically for discovery by block trade market participants                                                              |
 
 ## Revised Calls 3.5.0
 
 Support for additional fields has been added to the following requests:
 
- * GetAccounts
- * SubmitBlockTrade
- * ModifyOrder
+- GetAccounts
+- SubmitBlockTrade
+- ModifyOrder
 
 Additional fields have been added to the following responses:
 
-* GetWithdrawFormTemplateTypes
-* SubmitAccountLedgerEntry
-* GetAllLedgerEntryTickets
-* GetOpenWithdrawHolds
-* GetOrderStatus
-* TransferFunds
-* GetLevel1 / Level1UpdateEvent / SubscribeLevel1
+- GetWithdrawFormTemplateTypes
+- SubmitAccountLedgerEntry
+- GetAllLedgerEntryTickets
+- GetOpenWithdrawHolds
+- GetOrderStatus
+- TransferFunds
+- GetLevel1 / Level1UpdateEvent / SubscribeLevel1
 
 ## 3.5.0 New Endpoints
 
@@ -319,4 +316,3 @@ Additional fields have been added to the following responses:
 **SubscribeBlockTrades**
 
 **UnsubscribeBlockTrades**
-
