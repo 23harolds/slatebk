@@ -109,6 +109,7 @@ includes: # api - group - category - call
   - tickets/api_tix_system_submitwithdrawticketcomment
   - uncertain/api_uncertain_divider
   - uncertain/api_uncert_user_ping
+  - uncertain/api_uncert_user_setusergrouppermission
 
   # - apad-markdown-documentation/api_apad_divider
   # - apad-markdown-documentation/api_apad_background
