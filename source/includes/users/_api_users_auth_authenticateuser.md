@@ -28,11 +28,9 @@
 
 > In HTTP, an additional header is needed: Authorization
 
-```http
-POST /AP/AuthenticateUser HTTP/1.1
-Host: HTTPURL
-Authorization: dXNlcm5hbWU6cGFzc3dvcmQ=
-```
+### HTTP Request
+
+`POST https://hostname/AP/AuthenticateUser`
 
 Authenticates a user for the current websocket session.
 
